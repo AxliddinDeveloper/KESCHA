@@ -11,14 +11,14 @@ System.Console.Write($"Salom mening ismim {keschaIsm} senikichi? ");
 ism = System.Console.ReadLine();
 
 System.Console.WriteLine($"salom {ism}!");
-System.Console.Write($"mening yoshim {keschaYosh}da senikichi  {ism}?  ");
+System.Console.Write($"mening yoshim {keschaYosh} da senikichi  {ism}?  ");
 yosh = Convert.ToInt32(Console.ReadLine());
 
 yoshFarqi = yosh - keschaYosh;
-if (yosh > 6)
+if (yosh > keschaYosh)
 {
     System.Console.WriteLine($"Ooo! sen mendan {yoshFarqi} yosh katta ekansan");
-}else if (yosh == 6)
+}else if (yosh == keschaYosh)
 {
     System.Console.WriteLine("men sen bilan tengdosh ekanman");
 }
