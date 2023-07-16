@@ -3,72 +3,86 @@ namespace KESCHA.Classes
     class Animal
     {
         public string Ism { get; set;}
-        public int Yosh { get; set;}
+        
         public int yoshFarqi { get; set; }
         public int yoshFarqi2 { get; set; }
+        public int hayvonYoshi { get; set; }
+        public string aniqlanmaganIsm = "Aniqlanmagan Ism";
         public Animal(string ism, int yosh )
+        
         {
-            yosh = Yosh;
-            ism = Ism;
+             hayvonYoshi = yosh;
+            Ism = ism;
         }
         public Animal()
         {
             Ism = "No name";
-            Yosh = 0;
+            hayvonYoshi = 0;
             yoshFarqi = 0;
         }
-
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-        public Animal(
-        string ism, 
-        int foydalanuvchiYoshi, 
-        int yosh)
+        public void dasturParoli(string password)
         {
-            Ism = ism;
-            Yosh = yosh;
-            yoshFarqiniHisoblaVaQaytarma( foydalanuvchiYoshi, yosh);
-            yoshFarqi2 = yosh - foydalanuvchiYoshi;
-
+            
         }
 
-        public int yoshFarqiniHisobla(int foydalanuvchiYoshi)
+        public void salomlash(string foydalanuvchiIsmi)
         {
-            return foydalanuvchiYoshi - Yosh;
+            if (foydalanuvchiIsmi == "")
+            {
+                System.Console.WriteLine($"salom! {aniqlanmaganIsm} ");
+            }
+            else
+            {
+                Console.WriteLine($"salom {foydalanuvchiIsmi}!");
+            }
         }
+
+        public void yoshFarqiniHisoblavaQaytarma(int foydalanuvchiYoshi)
+        {
+            yoshFarqi = foydalanuvchiYoshi - hayvonYoshi;
+        }
+
         public int yoshFarqiniHisobla(int foydalanuvchiYoshi, int yosh)
         {
             return foydalanuvchiYoshi - yosh;
         }
+        
 
         public void yoshFarqiTaqqosla(int foydalanuvchiYoshi)
         {
-            if (foydalanuvchiYoshi > Yosh)
+            if (foydalanuvchiYoshi > hayvonYoshi)
             {
-                Console.WriteLine($"Ooo! sen mendan {foydalanuvchiYoshi - Yosh} yosh katta ekansan");
+                Console.WriteLine($"Ooo! sen mendan {foydalanuvchiYoshi - hayvonYoshi} yosh katta ekansan");
             }
-            else if (foydalanuvchiYoshi == Yosh)
+            else if (foydalanuvchiYoshi == hayvonYoshi)
             {
                 Console.WriteLine("men sen bilan tengdosh ekanman");
             }
             else
             {
-                Console.WriteLine($"sen mendan {foydalanuvchiYoshi - Yosh} yoshga kichik ekaansan ");
+                Console.WriteLine($"sen mendan {foydalanuvchiYoshi - hayvonYoshi} yoshga kichik ekaansan ");
             }
         }
 
-        public void dostlarBilanTanishuv(string foydalanuvchiIsmi,int foydalanuvchiYoshi)
+        public void dostlarBilanTanishuv(string foydalanuvchiIsmi,int foydalanuvchiYoshi,string foydalanuvchiHohishi)
         {
             int[] dostlarYoshi = {4, 3, foydalanuvchiYoshi};
             string[] dostlarNomi = {"vasya", "katya", foydalanuvchiIsmi};
-            Console.WriteLine("kel senga men o\'zimning dostlarim haqida gapirib beraman");
-            Console.WriteLine($" {dostlarNomi[0]}, {dostlarNomi[1]} va {dostlarNomi[2]}");
-            Console.WriteLine($"{dostlarNomi[0]}ning yoshi {dostlarYoshi[0]}da");
-            Console.WriteLine($"{dostlarNomi[1]}ning yoshi {dostlarYoshi[1]}da");
-            Console.WriteLine($"{dostlarNomi[2]}ning yoshi {dostlarYoshi[2]}da");
+            if (foydalanuvchiHohishi  == "ha")
+            {
+                for (int i = 0; i < dostlarNomi.Length; i++)
+                {
+                    Console.WriteLine($" {dostlarNomi[i]},");
+                    Console.WriteLine($"{dostlarNomi[i]}ning yoshi {dostlarYoshi[i]}da.");
+                }
+            }
+            else 
+            {
+                System.Console.WriteLine("");
+            }
+        
         }
-        private  void yoshFarqiniHisoblaVaQaytarma(int foydalanuvchiYoshi,int yosh)
+        private void yoshFarqiniHisoblaQaytarma(int foydalanuvchiYoshi,int yosh)
         {
             yoshFarqi = foydalanuvchiYoshi - yosh;
         }
