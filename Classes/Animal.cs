@@ -18,9 +18,6 @@ namespace KESCHA.Classes
             yoshFarqi = 0;
         }
 
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
         public Animal(
         string ism, 
         int foydalanuvchiYoshi, 
@@ -58,15 +55,22 @@ namespace KESCHA.Classes
             }
         }
 
-        public void dostlarBilanTanishuv(string foydalanuvchiIsmi,int foydalanuvchiYoshi)
+        public void dostlarBilanTanishuv(string foydalanuvchiIsmi,int foydalanuvchiYoshi,string foydalanuvchiHohishi)
         {
             int[] dostlarYoshi = {4, 3, foydalanuvchiYoshi};
             string[] dostlarNomi = {"vasya", "katya", foydalanuvchiIsmi};
-            Console.WriteLine("kel senga men o\'zimning dostlarim haqida gapirib beraman");
-            Console.WriteLine($" {dostlarNomi[0]}, {dostlarNomi[1]} va {dostlarNomi[2]}");
-            Console.WriteLine($"{dostlarNomi[0]}ning yoshi {dostlarYoshi[0]}da");
-            Console.WriteLine($"{dostlarNomi[1]}ning yoshi {dostlarYoshi[1]}da");
-            Console.WriteLine($"{dostlarNomi[2]}ning yoshi {dostlarYoshi[2]}da");
+            if (foydalanuvchiHohishi  == "ha")
+            {
+                Console.WriteLine($" {dostlarNomi[0]}, {dostlarNomi[1]} va {dostlarNomi[2]}");
+                Console.WriteLine($"{dostlarNomi[0]}ning yoshi {dostlarYoshi[0]}da");
+                Console.WriteLine($"{dostlarNomi[1]}ning yoshi {dostlarYoshi[1]}da");
+                Console.WriteLine($"{dostlarNomi[2]}ning yoshi {dostlarYoshi[2]}da");
+            }
+            else 
+            {
+                System.Console.Write("");
+            }
+        
         }
         private  void yoshFarqiniHisoblaVaQaytarma(int foydalanuvchiYoshi,int yosh)
         {

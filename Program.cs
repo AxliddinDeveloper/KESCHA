@@ -1,4 +1,4 @@
-﻿﻿ using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Intrinsics.Arm;
@@ -7,24 +7,23 @@ using KESCHA.Classes;
 //ozgaruvchilar
 string ism;//odamning ismi
 int yosh;//odamning yoshi
-string password;
+string password, hohish;
 //parol
 
-key:
-System.Console.WriteLine(" men bilan gaplashish uchun parolni kiriting");
-password =Console.ReadLine();
-//mantiqiy qismi
-if (password != "password" )
+
+do
 {
-    System.Console.WriteLine("\n");
-    System.Console.WriteLine("parol notog'ri iltimos qaytadan urinib koring");
-    goto key;
-}
-else
+    Console.WriteLine("Men bilan gaplashish uchun parolni kiriting");
+    password = Console.ReadLine();
+    if (password != "parol")
+    {
+        Console.WriteLine("\nParol noto'g'ri, qayta urinib ko'ring\n");
+    }
+} 
+while (password != "parol");
 {
-    System.Console.WriteLine("\nparol tog'ri davom etishingiz mumkin\n");
+    Console.WriteLine("\nParol to'g'ri, davom etishingiz mumkin\n");
 }
-    
 
 
 
@@ -41,6 +40,7 @@ yosh = Convert.ToInt32(Console.ReadLine());
 Animal kescha = new Animal("KESCHA", yosh, 3);
 kescha.Yosh = 3;
 
-
+Console.WriteLine(" senga men o\'zimning dostlarim haqida gapirib berishimni hohlisanmi? ");
+hohish = Convert.ToString(Console.ReadLine());
 kescha.yoshFarqiTaqqosla(yosh);
-kescha.dostlarBilanTanishuv(ism,yosh);
+kescha.dostlarBilanTanishuv(ism,yosh,hohish);
